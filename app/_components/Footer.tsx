@@ -36,7 +36,6 @@ const Footer = () => {
 
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
-        console.log("Submitted email:", email);
         setEmail(""); // Clear the form
         toast.success("👍 Submission successful!", {
             position: "bottom-right",

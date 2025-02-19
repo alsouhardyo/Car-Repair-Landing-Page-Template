@@ -73,7 +73,6 @@ export default function ContactForm() {
     const handleSubmit = (e: FormEvent) => {
         e.preventDefault();
         if (validateForm()) {
-            console.log("Form Data:", formData);
             toast.success("👍 Submission successful!", {
                 position: "bottom-right",
                 autoClose: 5000,
