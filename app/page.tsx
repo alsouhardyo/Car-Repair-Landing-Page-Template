@@ -10,10 +10,10 @@ import Testimonials from "./_components/Testimonials";
 import ContactForm from "./_components/Contact";
 import Footer from "./_components/Footer";
 import { ToastContainer } from "react-toastify";
-import { useLoading } from "./context";
+import { UseLoading } from "./context";
 
 const page = () => {
-    const { loading, setLoading } = useLoading();
+    const { loading, setLoading } = UseLoading();
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);

@@ -2,13 +2,13 @@ import React, { useState, useEffect } from "react";
 import Image from "next/image";
 import { RxCross2 } from "react-icons/rx";
 import { IoMenuOutline } from "react-icons/io5";
-import { useLoading } from "../context/index";
+import { UseLoading } from "../context/index";
 import { motion, AnimatePresence } from "motion/react";
 
 const Header = () => {
     const [isOpen, setIsOpen] = useState(false);
     const [sticky, setSticky] = useState(false);
-    const { setLoading } = useLoading();
+    const { setLoading } = UseLoading();
 
     const navItems: { name: string; href: string }[] = [
         { name: "Home", href: "#" },
