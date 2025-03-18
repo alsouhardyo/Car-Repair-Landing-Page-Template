@@ -1,0 +1,58 @@
+/* Importing Tailwind */
+@import "tailwindcss";
+
+/* Theme Configuration */
+@theme {
+    --color-accent: #405FF2;
+    --font-dm: "DM Sans", "sans-serif";
+    --font-slab: "Roboto Slab", "sans-serif";
+}
+
+/* Custom Components */
+
+@layer components {
+    .btn-transition{
+        @apply transition-all duration-500 ease-in-out;
+    }
+    .box-padding{
+        @apply px-6 md:px-8 lg:px-12 py-4 md:py-8 lg:py-14;
+    }
+}
+
+.overflow-x-hide{
+    overflow-x: hidden;
+    -moz-overflow-x: hidden;
+}
+
+.header-effect{
+    position: sticky;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    background-color: rgba(255, 255, 255, 0.555);
+    backdrop-filter: blur(16px);
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1), 0 1px 3px rgba(0, 0, 0, 0.06);
+    animation: nav-animation 0.5s ease-in-out;
+}
+
+@keyframes nav-animation {
+    0%{
+        opacity: 0;
+        transform: translateY(-60px);
+    }100%{
+        opacity: 1;
+        transform: translateY(0);
+    }   
+}
+
+/* Swiper Custom Styles */
+.testimonials-swiper .swiper-pagination-bullet {
+    background-color: var(--color-accent);
+    opacity: 0.5;
+    width: 10px;
+    height: 10px;
+}
+
+.testimonials-swiper .swiper-pagination-bullet-active {
+    opacity: 1;
+}
