@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { DM_Sans, Roboto_Slab } from "next/font/google";
 import "./globals.css";
 import { LoadingProvider } from "./context/index";
+import LenisProvider from "./lib/LenisScroll";
 
 const dmSans = DM_Sans({
     subsets: ["latin"],
@@ -31,7 +32,9 @@ export default function RootLayout({
             className={`${dmSans.className} ${robotoSlab.className} min-h-screen scroll-smooth overflow-x-hide`}
         >
             <body cz-shortcut-listen="true" className="font-dm min-h-screen">
-                <LoadingProvider>{children}</LoadingProvider>
+                <LenisProvider>
+                    <LoadingProvider>{children}</LoadingProvider>
+                </LenisProvider>
             </body>
         </html>
     );

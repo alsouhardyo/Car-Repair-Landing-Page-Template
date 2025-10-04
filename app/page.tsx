@@ -6,6 +6,7 @@ import Loading from "./loading";
 import About from "./_components/About";
 import Services from "./_components/Services";
 import Process from "./_components/Process";
+import FeaturedProducts from "./_components/FeaturedProducts";
 import Testimonials from "./_components/Testimonials";
 import ContactForm from "./_components/Contact";
 import Footer from "./_components/Footer";
@@ -17,9 +18,9 @@ const page = () => {
     useEffect(() => {
         const timer = setTimeout(() => {
             setLoading(false);
-        }, 1000);
+        }, 2000);
         return () => clearTimeout(timer);
-    }, [loading]);
+    }, [loading, setLoading]);
     return (
         <>
             {loading ? (
@@ -31,6 +32,7 @@ const page = () => {
                     <About />
                     <Services />
                     <Process />
+                    <FeaturedProducts />
                     <Testimonials />
                     <ContactForm />
                     <Footer />
