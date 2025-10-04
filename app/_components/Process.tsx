@@ -52,52 +52,51 @@ const Process = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6 }}
                 viewport={{ once: true }}
-                className="text-center mb-16"
+                className="text-center mb-8 md:mb-16 px-4"
             >
-                <span className="text-accent font-medium text-lg">
+                <span className="text-accent font-medium text-sm md:text-lg">
                     HOW MECHANO WORKS
                 </span>
-                <h2 className="text-3xl md:text-5xl font-bold mt-4 font-slab text-gray-800">
+                <h2 className="text-2xl sm:text-3xl md:text-5xl font-bold mt-2 md:mt-4 font-slab text-gray-800">
                     Your Journey to Excellence
                 </h2>
-                <p className="text-gray-600 mt-4 max-w-2xl mx-auto text-lg">
+                <p className="text-gray-600 mt-2 md:mt-4 max-w-2xl mx-auto text-sm md:text-lg">
                     Experience seamless auto care with our streamlined process
                 </p>
             </motion.div>
 
-            <div className="relative max-w-4xl mx-auto">
+            <div className="relative max-w-4xl mx-auto px-4">
                 <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-1 bg-gradient-to-b from-accent to-accent/30 hidden md:block"></div>
 
                 {processSteps.map((step, index) => (
                     <motion.div
                         key={step.id}
-                        initial={{ opacity: 0, x: index % 2 === 0 ? -100 : 100 }}
-                        whileInView={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.7, delay: index * 0.2 }}
+                        initial={{ opacity: 0, y: 50 }}
+                        whileInView={{ opacity: 1, y: 0 }}
+                        transition={{ duration: 0.7, delay: index * 0.1 }}
                         viewport={{ once: true }}
-                        className={`relative flex items-center mb-16 ${index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
-                            }`}
+                        className={`relative flex flex-col md:flex-row md:items-center mb-8 md:mb-16 ${
+                            index % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'
+                        }`}
                     >
-                        <div className="md:w-1/2 px-4">
-                            <div
-                                className="bg-white p-8 rounded-2xl shadow-lg hover:shadow-2xl hover:scale-105 transition-all duration-500 ease-in-out"
-                            >
-                                <div className="flex items-center mb-4">
+                        <div className="w-full md:w-1/2 mb-6 md:mb-0 px-2 md:px-4">
+                            <div className="bg-white p-4 md:p-8 rounded-2xl shadow-lg hover:shadow-2xl md:hover:scale-105 transition-all duration-500 ease-in-out">
+                                <div className="flex items-center mb-3 md:mb-4">
                                     <motion.div
                                         whileHover={{ rotate: 360 }}
                                         transition={{ duration: 0.5 }}
-                                        className="bg-accent/10 p-4 rounded-full mr-4"
+                                        className="bg-accent/10 p-2 md:p-4 rounded-full mr-3 md:mr-4"
                                     >
-                                        <span className="text-accent text-2xl">{step.icon}</span>
+                                        <span className="text-accent text-lg md:text-2xl">{step.icon}</span>
                                     </motion.div>
-                                    <div className="bg-accent text-white w-8 h-8 rounded-full flex items-center justify-center font-bold">
+                                    <div className="bg-accent text-white w-6 h-6 md:w-8 md:h-8 rounded-full flex items-center justify-center font-bold text-sm md:text-base">
                                         {step.id}
                                     </div>
                                 </div>
-                                <h3 className="text-2xl font-bold mb-3 text-gray-800">
+                                <h3 className="text-lg md:text-2xl font-bold mb-2 md:mb-3 text-gray-800">
                                     {step.title}
                                 </h3>
-                                <p className="text-gray-600 leading-relaxed">
+                                <p className="text-sm md:text-base text-gray-600 leading-relaxed">
                                     {step.description}
                                 </p>
                             </div>
@@ -111,11 +110,11 @@ const Process = () => {
                             className="absolute left-1/2 transform -translate-x-1/2 w-6 h-6 bg-accent rounded-full border-4 border-white shadow-lg hidden md:block z-10"
                         ></motion.div>
 
-                        <div className="md:w-1/2 px-4">
+                        <div className="w-full md:w-1/2 px-2 md:px-4">
                             <motion.div
                                 initial={{ opacity: 0, scale: 0.8 }}
                                 whileInView={{ opacity: 1, scale: 1 }}
-                                transition={{ duration: 0.6, delay: index * 0.2 + 0.2 }}
+                                transition={{ duration: 0.6, delay: index * 0.1 + 0.2 }}
                                 viewport={{ once: true }}
                                 className="relative overflow-hidden rounded-2xl shadow-lg group"
                             >
@@ -124,16 +123,16 @@ const Process = () => {
                                     alt={step.title}
                                     width={400}
                                     height={300}
-                                    className="w-full h-64 object-cover group-hover:scale-110 transition-transform duration-500"
+                                    className="w-full h-48 md:h-64 object-cover group-hover:scale-110 transition-transform duration-500"
                                 />
                                 <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent"></div>
                                 <motion.div
-                                    className="absolute bottom-4 left-4 text-white"
+                                    className="absolute bottom-3 md:bottom-4 left-3 md:left-4 text-white"
                                     initial={{ y: 20, opacity: 0 }}
                                     whileInView={{ y: 0, opacity: 1 }}
                                     transition={{ duration: 0.3, delay: index * 0.1, ease: "easeInOut" }}
                                 >
-                                    <div className="bg-accent px-3 py-1 rounded-full text-sm font-medium">
+                                    <div className="bg-accent px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">
                                         {step.stat}
                                     </div>
                                 </motion.div>
@@ -148,7 +147,7 @@ const Process = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8 }}
                 viewport={{ once: true }}
-                className="mt-20 grid grid-cols-2 md:grid-cols-4 gap-8 max-w-4xl mx-auto"
+                className="mt-12 md:mt-20 grid grid-cols-2 md:grid-cols-4 gap-4 md:gap-8 max-w-4xl mx-auto px-4"
             >
                 {[
                     { number: "5000+", label: "Happy Customers" },
@@ -162,22 +161,22 @@ const Process = () => {
                         whileInView={{ scale: 1 }}
                         transition={{ duration: 0.5, delay: index * 0.1 }}
                         viewport={{ once: true }}
-                        className="text-center bg-white/80 backdrop-blur-sm p-6 rounded-xl shadow-lg"
+                        className="text-center bg-white/80 backdrop-blur-sm p-3 md:p-6 rounded-xl shadow-lg"
                     >
                         <motion.div
-                            className="text-3xl font-bold text-accent mb-2"
+                            className="text-xl md:text-3xl font-bold text-accent mb-1 md:mb-2"
                             whileHover={{ scale: 1.1 }}
                         >
                             {stat.number}
                         </motion.div>
-                        <div className="text-gray-600 font-medium">{stat.label}</div>
+                        <div className="text-xs md:text-sm text-gray-600 font-medium">{stat.label}</div>
                     </motion.div>
                 ))}
             </motion.div>
 
-            <div className="absolute top-20 left-10 w-20 h-20 bg-accent/10 rounded-full blur-xl"></div>
-            <div className="absolute bottom-20 right-10 w-32 h-32 bg-accent/5 rounded-full blur-2xl"></div>
-            <div className="absolute top-1/2 right-20 w-16 h-16 bg-accent/10 rounded-full blur-lg"></div>
+            <div className="absolute top-20 left-4 md:left-10 w-16 md:w-20 h-16 md:h-20 bg-accent/10 rounded-full blur-xl"></div>
+            <div className="absolute bottom-20 right-4 md:right-10 w-24 md:w-32 h-24 md:h-32 bg-accent/5 rounded-full blur-2xl"></div>
+            <div className="absolute top-1/2 right-8 md:right-20 w-12 md:w-16 h-12 md:h-16 bg-accent/10 rounded-full blur-lg"></div>
         </section>
     );
 };
